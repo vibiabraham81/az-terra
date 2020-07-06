@@ -78,7 +78,7 @@ resource "azurerm_virtual_machine" "example" {
   storage_os_disk {
     name              = "${var.stor_name}"
     disk_size_gb      = "${var.stor_size}"
-    caching           = ""${var.caching}"
+    caching           = "${var.caching}"
     create_option     = "${var.create_option}"
     managed_disk_type = "${var.disk_type}"
   }
@@ -97,5 +97,4 @@ boot_diagnostics {
         enabled     = "true"
         storage_uri = azurerm_storage_account.sa.primary_blob_endpoint
     }
-}
 }
