@@ -4,7 +4,7 @@ provider "azurerm" {
 
 # Create virtual network
 resource "azurerm_virtual_network" "TFNet" {
-    name                = "${var.vnet_name}"
+    name                = "TFVnet"
     address_space       = ["${var.address_space}"]
     location            = "${var.location}"
     resource_group_name = "${var.resource_group}"
@@ -39,14 +39,14 @@ resource "azurerm_network_interface" "example" {
     ip_configuration {
     name                          = "${var.ipconfig_name}"
     subnet_id                     = azurerm_subnet.tfsubnet.id 
-    private_ip_address_allocation  = "${var.ip_allocation}"
+    private_ip_address_allocation  = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.example.id
   }
 }
 
 #Create Boot Diagnostic Account
 resource "azurerm_storage_account" "sa" {
-  name                     = "${var.diag_account}" 
+  name                     = "newdiagaccountjul52020" 
   resource_group_name      = "${var.resource_group}"
   location                 = "${var.location}"
    account_tier            = "${var.account_tier}"
