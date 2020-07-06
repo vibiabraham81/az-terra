@@ -1,7 +1,7 @@
 vnet_name = "TFVnet"
 address_space = "10.0.0.0/16"
 location = "East US"
-resource_group = ""
+resource_group = "187-583dfa-deploying-an-azure-vm-with-terraform-nm"
 address_prefix = "10.0.1.0/24"
 public_ip = "public1"
 allocation_method = "Dynamic"
